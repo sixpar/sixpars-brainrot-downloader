@@ -1,68 +1,115 @@
-🧠 Sixpar's Brainrot Downloader
-EZ MODE INSTALLATION (for any box wit Docker on it)
-1. 🛠️ Get Docker & Docker Compose poppin’
+    _---~~(~~-_.
+    _{        )   )
+  ,   ) -~~- ( ,-' )_
+ (  `-,_..`., )-- '_,)
+( ` _)  (  -~( -_ `,  }
+(_-  _  ~_-~~~~`,  ,' )
+  `~ -^(    __;-,((()))
+        ~~~~ {_ -_(())
+               `\  }
+                 { } 
+
+# 🧠 Sixpar's Brainrot Downloader
+
+## EZ MODE INSTALLATION (for any box with Docker)
+
+### 🛠️ Get Docker & Docker Compose poppin'
 
 Luh links for the cuhs that need it:
+- [Docker Install Guide](https://docs.docker.com/get-docker/)
+- [Docker Compose Install Guide](https://docs.docker.com/compose/install/)
 
-    Docker Install Guide
+---
 
-    Docker Compose Install Guide
-
-2. 💾 Grab the code, cuh
+### 💾 Grab the code, cuh
 
 Best way? Git that shii:
 
+```sh
 git clone https://github.com/sixpar/sixpars-brainrot-downloader.git
 cd sixpars-brainrot-downloader
+```
 
 OR just snatch the ZIP off GitHub n unzip it. Ion care.
-3. 🚀 Spin dat bih up
 
+---
+
+### 🚀 Spin dat bih up
+
+```sh
 docker compose up -d --build
+```
 
 KERBLOW 💥 server up. Easy money.
-4. 🌐 Hop in yo browser
 
-    http://localhost:5000 if you on the same box
+---
 
-    http://<ya-server-ip>:5000 if you remote wit it
+### 🌐 Hop in yo browser
 
-5. 🍕 WAH-LAH. HERE’S YOUR ZA.
+- [http://localhost:5000](http://localhost:5000) if you on the same box
+- `http://<ya-server-ip>:5000` if you remote wit it
 
-![image](https://github.com/user-attachments/assets/2bcf51a3-969b-4322-8de6-c68792dbcee3)
+---
+
+### 🍕 WAH-LAH. HERE'S YOUR ZA.
+
+![screenshot](image)
 
 Sit back. Vibe. Let the brainrot flow.
 
-image
-6. 🔐 (OPTIONAL) Instagram Cookies
+![vibe](image)
 
-Tryna snatch private Reels like a ninja?
-Drop your instagram_cookies.txt in the project folder.
-Now you VIP in them DMs.
-7. ✅ Done done.
+---
 
-    Paste them TikToks, Reels, YouTube links in the web UI.
+### 🔐 (OPTIONAL) Instagram Cookies
 
-    Pick MP4 / WebM / MP3 — whatever ya soul need.
+Tryna snatch private Reels like a ninja? Drop your `instagram_cookies.txt` in the project folder. Now you VIP in them DMs.
 
-    Videos disappear in 60 seconds like Houdini.
+---
 
-    Wanna fit it for Discord? Just tick that luh box 🧠✅
+### ✅ Done done.
 
-🧯 If shii break:
+Paste them TikToks, Reels, YouTube links in the web UI.
 
-    Permissions error? Use sudo or toss yourself in the docker gang.
+Pick MP4 / WebM / MP3 — whatever ya soul need.
 
-    Wanna update? Pull dat latest and re-run the build.
+Videos disappear in 60 seconds like Houdini.
+
+Wanna fit it for Discord? Just tick that luh box 🧠✅
+
+---
+
+### 🧯 If shii break:
+
+- Permissions error? Use sudo or toss yourself in the docker gang.
+- Wanna update? Pull dat latest and re-run the build.
+
+---
 
 ✨ Made with way too much love by Sixpar
 
-    this joint powered by:
+---
 
-    🧪 yt-dlp — public domain, go wild
+#### this joint powered by:
 
-    🧼 Flask — BSD-3
+- 🧪 **yt-dlp** — public domain, go wild
+- 🧼 **Flask** — BSD-3
+- 🔁 **HandBrakeCLI** — GPL-2.0 or sum shii
 
-    🔁 HandBrakeCLI — GPL-2.0 or sum shii
+Big shoutout to the real ones who built all that. Without y'all, we just out here rottin wit no sauce 💯
 
-Big shoutout to the real ones who built all that. Without y’all, we just out here rottin wit no sauce 💯
+---
+
+<sub>^^ the text above was written by AI ^^</sub>
+
+---
+
+## Credits
+
+This project would not be possible without these amazing open-source tools:
+
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp) — Unlicense (public domain)
+- [Flask](https://flask.palletsprojects.com/) — BSD-3-Clause License
+- [HandBrakeCLI](https://handbrake.fr/) — GPL-2.0-only License
+
+Thank you to all the contributors and maintainers of these projects! 
