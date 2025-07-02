@@ -1,13 +1,5 @@
-    _---~~(~~-_.
-    _{        )   )
-  ,   ) -~~- ( ,-' )_
- (  `-,_..`., )-- '_,)
-( ` _)  (  -~( -_ `,  }
-(_-  _  ~_-~~~~`,  ,' )
-  `~ -^(    __;-,((()))
-        ~~~~ {_ -_(())
-               `\  }
-                 { } 
+![image](https://github.com/user-attachments/assets/c6ff159f-80bc-40f5-b229-a6e2bc417c9d)
+
 
 # Sixpar's Brainrot Downloader
 
