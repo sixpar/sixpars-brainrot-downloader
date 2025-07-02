@@ -1,15 +1,4 @@
-    _---~~(~~-_.
-    _{        )   )
-  ,   ) -~~- ( ,-' )_
- (  `-,_..`., )-- '_,)
-( ` _)  (  -~( -_ `,  }
-(_-  _  ~_-~~~~`,  ,' )
-  `~ -^(    __;-,((()))
-        ~~~~ {_ -_(())
-               `\  }
-                 { } 
-
-# 🧠 Sixpar's Brainrot Downloader
+# Sixpar's Brainrot Downloader
 
 ## EZ MODE INSTALLATION (for any box with Docker)
 
