@@ -53,11 +53,7 @@ KERBLOW 💥 server up. Easy money.
 
 ### 🍕 WAH-LAH. HERE'S YOUR ZA.
 
-![screenshot](image)
-
 Sit back. Vibe. Let the brainrot flow.
-
-![vibe](image)
 
 ---
 
