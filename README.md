@@ -28,12 +28,16 @@
       
 
 
-WAh-LAH!!!! HERES YOUR ZA
-         ![image](https://github.com/user-attachments/assets/c6ff159f-80bc-40f5-b229-a6e2bc417c9d)
-5. **(Optional) Instagram cookies**
+
+   WAh-LAH!!!! HERES YOUR ZA
+ 
+
+   ![image](https://github.com/user-attachments/assets/c6ff159f-80bc-40f5-b229-a6e2bc417c9d)
+         
+6. **(Optional) Instagram cookies**
    - If you want to download private Instagram videos, add your `instagram_cookies.txt` to the project folder.
 
-6. **Done!**
+7. **Done!**
    - Use the web UI to download TikToks, Instagram Reels, and YouTube videos as MP4, WebM, or MP3.
    - Videos are auto-deleted after 1 minute.
    - For Discord-optimized downloads, check the box on the web UI.
