@@ -80,6 +80,18 @@ Wanna fit it for Discord? Just tick that luh box 🧠✅
 - Permissions error? Use sudo or toss yourself in the docker gang.
 - Wanna update? Pull dat latest and re-run the build.
 
+```sh
+# If you get a permissions error with Docker:
+sudo docker compose up -d --build
+
+# Or add yourself to the docker group (then log out and back in):
+sudo usermod -aG docker $USER
+
+# To update the app:
+git pull
+sudo docker compose up -d --build
+```
+
 ---
 
 ✨ Made with way too much love by Sixpar
