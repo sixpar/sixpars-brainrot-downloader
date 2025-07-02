@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sixpar's Brainrot Downloader</title>
+    <style>
+        /* Gruvbox-inspired colors */
+        :root {
+            --bg: #282828;
+            --bg-alt: #3c3836;
+            --fg: #ebdbb2;
+            --fg-alt: #bdae93;
+            --yellow: #fabd2f;
+            --orange: #fe8019;
+            --blue: #83a598;
+            --aqua: #8ec07c;
+            --red: #fb4934;
+            --green: #b8bb26;
+        }
+        body { font-family: 'Fira Mono', 'Consolas', monospace; background: var(--bg); margin: 0; padding: 0; color: var(--fg); }
+        .container { max-width: 500px; margin: 40px auto; background: var(--bg-alt); border-radius: 8px; box-shadow: 0 2px 8px #0002; padding: 32px; }
+        h1 { text-align: center; color: var(--yellow); letter-spacing: 1px; }
+        form { display: flex; flex-direction: column; gap: 12px; }
+        input, select, button { padding: 10px; font-size: 1em; border-radius: 4px; border: 1px solid var(--fg-alt); background: var(--bg); color: var(--fg); }
+        input:focus, select:focus { outline: 2px solid var(--yellow); }
+        button { background: var(--yellow); color: var(--bg); border: none; cursor: pointer; font-weight: bold; transition: background 0.2s, color 0.2s; }
+        button:hover { background: var(--orange); color: var(--fg); }
+        #progress-container { margin-top: 24px; text-align: center; }
+        #download-link { margin-top: 12px; display: inline-block; color: var(--aqua); text-decoration: underline; }
+        #download-link:hover { color: var(--blue); }
+        #status { display: block; margin-top: 8px; min-height: 24px; color: var(--green); }
+        .error { color: var(--red); }
+    </style>
+    <script>
+        function startDownload(event) {
+            event.preventDefault();
+            document.getElementById('progress').value = 0;
+            document.getElementById('progress-container').style.display = 'block';
+            document.getElementById('status').innerText = 'Starting download...';
+            document.getElementById('status').className = '';
+            document.getElementById('download-link').style.display = 'none';
+            var url = document.getElementById('url').value;
+            var type = document.getElementById('type').value;
+            var formData = new FormData();
+            formData.append('url', url);
+            formData.append('type', type);
+            fetch('/download', {method: 'POST', body: formData})
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Server returned ' + response.status);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.download_id || data.video_id) {
+                        pollProgress(data.download_id || data.video_id);
+                    } else if (data.error) {
+                        document.getElementById('status').innerText = 'Error: ' + data.error;
+                        document.getElementById('status').className = 'error';
+                    } else {
+                        document.getElementById('status').innerText = 'Unknown error.';
+                        document.getElementById('status').className = 'error';
+                    }
+                })
+                .catch(err => {
+                    document.getElementById('status').innerText = 'Error: ' + err.message;
+                    document.getElementById('status').className = 'error';
+                });
+        }
+        function pollProgress(video_id) {
+            fetch('/progress/' + video_id)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('progress').value = data.progress || 0;
+                    if (data.status === 'downloading' || data.status === 'processing') {
+                        document.getElementById('status').innerText = 'Downloading... ' + (data.progress || 0) + '%';
+                        document.getElementById('status').className = '';
+                        setTimeout(function() { pollProgress(video_id); }, 1000);
+                    } else if (data.status === 'finished') {
+                        document.getElementById('status').innerText = 'Download complete!';
+                        document.getElementById('status').className = '';
+                        var link = document.getElementById('download-link');
+                        link.href = '/video/' + video_id;
+                        link.style.display = 'inline';
+                    } else if (data.status === 'error') {
+                        document.getElementById('status').innerText = 'Error: ' + (data.error || 'Unknown error');
+                        document.getElementById('status').className = 'error';
+                    } else {
+                        document.getElementById('status').innerText = 'Unknown status.';
+                        document.getElementById('status').className = 'error';
+                    }
+                })
+                .catch(err => {
+                    document.getElementById('status').innerText = 'Error: ' + err.message;
+                    document.getElementById('status').className = 'error';
+                });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Sixpar's Brainrot Downloader</h1>
+        <p>you know what this is, videos get deleted after 1 minute, make sure you chose mp4/mp3</p>
+        <form onsubmit="startDownload(event)">
+            <input type="text" id="url" name="url" placeholder="Paste TikTok, Instagram, or YouTube URL here" required>
+            <select id="type" name="type">
+                <option value="mp4" selected>Video (.mp4)</option>
+                <option value="webm">Video (.webm)</option>
+                <option value="mp3">Audio (.mp3)</option>
+            </select>
+            <label style="color: var(--fg); font-size: 0.95em;">
+                <input type="checkbox" id="discord" name="discord"> Discord-optimized (smaller, H.264/AAC, MP4)
+            </label>
+            <button type="submit">Download</button>
+        </form>
+        <div id="progress-container" style="display:none;">
+            <progress id="progress" value="0" max="100" style="width:100%;"></progress>
+            <span id="status"></span>
+            <br>
+            <a id="download-link" href="#" style="display:none;">Download File</a>
+        </div>
+    </div>
+</body>
+</html>
