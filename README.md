@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/c6ff159f-80bc-40f5-b229-a6e2bc417c9d)
+
 
 
 # Sixpar's Brainrot Downloader
@@ -25,6 +25,11 @@
    - `http://localhost:5000` (if running locally)
    - `http://<your-server-ip>:5000` (if running on a remote server)
 
+      
+
+
+WAh-LAH!!!! HERES YOUR ZA
+         ![image](https://github.com/user-attachments/assets/c6ff159f-80bc-40f5-b229-a6e2bc417c9d)
 5. **(Optional) Instagram cookies**
    - If you want to download private Instagram videos, add your `instagram_cookies.txt` to the project folder.
 
